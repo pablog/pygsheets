@@ -81,7 +81,7 @@ class Worksheet(object):
     def hidden(self, hidden):
         self.jsonSheet['properties']['hidden'] = hidden
         if self._linked:
-            self.client.sheet.update_sheet_properties_request(self.spreadsheet.id, self.jsonSheet['properties'], 'hidden')
+            self.client.update_sheet_properties(self.spreadsheet.id, self.jsonSheet['properties'], 'hidden')
 
     @property
     def url(self):
